@@ -1,5 +1,4 @@
 const PersonalityInsights = require('watson-developer-cloud/personality-insights/v3');
-const util                = require('bluebird');
 
 class PersonalityInsightsController{
     constructor(){

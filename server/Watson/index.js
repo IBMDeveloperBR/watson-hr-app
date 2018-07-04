@@ -1,4 +1,5 @@
 module.exports = {
     'PersonalityInsights': require('./PersonalityInsightsController'),
-    'LanguageTranslator': require('./LanguageTranslatorController')
+    'LanguageTranslator': require('./LanguageTranslatorController'),
+    'NaturalLanguageUnderstanding': require('./NLUController')
 }
