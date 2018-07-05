@@ -4,8 +4,9 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const fileUpload = require('express-fileupload');
 
-const PORT =  process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 
@@ -22,10 +23,10 @@ app.disable('x-powered-by');
 //body-parser config
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(fileUpload());
 
 //API Routes
 require('./Routes')(app, express);
-
 
 //Error handler
 app.use((err, req, res, next) => {
