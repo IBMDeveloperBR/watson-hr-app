@@ -2,9 +2,9 @@
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum ullam mollitia at hic possimus totam? Facere dolorum distinctio id neque ex. Sint iste odio dolore error beatae nam!
 </div>
 
-<div class="upload">
+<div class="upload" *ngIf="!result">
   <label for="file-upload" class="custom-file-upload">
-    Upload Curriculo <i class="material-icons">attach_file</i>
+    {{ fileName || "Upload Curriculo" }} <i class="material-icons">attach_file</i>
   </label>
   <input id="file-upload" type="file" (change)="fileChange($event)"/>
   <mat-form-field>
@@ -20,7 +20,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
 </div>
 
 <div class="result-text">
-
+  <p *ngIf="result">
+    {{result | json}}
+  </p>
+  <div *ngIf="!result" class="btn-send">
+    <button mat-fab *ngIf="!sended" (click)="sendFile()">
+      <mat-icon>send</mat-icon>
+    </button>
+    <mat-spinner color="#4A4063" *ngIf="sended"></mat-spinner>
+  </div>
 </div>
 
 <div class="result-per-ins">
