@@ -1,4 +1,4 @@
-const pdfToText = require('pdf-to-text'); 
+const pdfUtil = require('pdf-to-text'); 
 const path      = require('path');
 
 module.exports = (fileName) => {
