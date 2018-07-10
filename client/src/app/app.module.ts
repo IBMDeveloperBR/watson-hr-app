@@ -6,11 +6,15 @@ import { MaterialModule } from './app.module.material';
 
 import { AppComponent } from './app.component';
 import { MainPersonalityPageComponent } from './main-personality-page/main-personality-page.component';
+import { ChangeParamsPersonalityPageComponent } from './change-params-personality-page/change-params-personality-page.component';
+import { NluPageComponent } from './nlu-page/nlu-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPersonalityPageComponent
+    MainPersonalityPageComponent,
+    ChangeParamsPersonalityPageComponent,
+    NluPageComponent
   ],
   imports: [
     BrowserModule,
