@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';  // replaces previous Http service
-
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { MaterialModule } from './app.module.material';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 import { AppComponent } from './app.component';
 import { MainPersonalityPageComponent } from './main-personality-page/main-personality-page.component';
@@ -26,6 +26,7 @@ import { PersonalityService } from './services/personality.service';
     FormsModule,
     HttpClientModule,
     MaterialModule,
+    NgxChartsModule
   ],
   providers: [
     PersonalityService

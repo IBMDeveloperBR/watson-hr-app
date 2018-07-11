@@ -9,10 +9,17 @@ import { PersonalityService } from '../services/personality.service';
 })
 export class MainPersonalityPageComponent implements OnInit {
   selectedLanguage:string;
-  result:Object;
+  result:any;
   fileName:string;
   sended:boolean;
   file:File;
+  areaResult:string;
+
+  displayCharts:boolean;
+  personalityRawData:Array<Object>;
+  needsRawData:Array<Object>;
+  valuesRawData:Array<Object>;
+
 
   constructor(
     private snackBar: MatSnackBar,
@@ -22,8 +29,17 @@ export class MainPersonalityPageComponent implements OnInit {
   ngOnInit() {
     this.selectedLanguage = '';
     this.fileName = '';
+    this.areaResult = '';
     this.sended = false;
     this.file = null;
+    this.displayCharts = false;
+    this.initRawDataArrays();
+  }
+
+  initRawDataArrays(){
+    this.personalityRawData = [];
+    this.needsRawData = [];
+    this.valuesRawData = [];
   }
 
   fileChange(event: HTMLInputEvent) {
@@ -34,6 +50,27 @@ export class MainPersonalityPageComponent implements OnInit {
     }
   }
 
+  extractData(){
+    this.result.personality.forEach(element => {
+      this.personalityRawData.push({
+        name: element.name,
+        value: (parseFloat(element.percentile) * 100).toFixed(2)
+      })
+    });
+    this.result.needs.forEach(element => {
+      this.needsRawData.push({
+        name: element.name,
+        value: (parseFloat(element.percentile) * 100).toFixed(2)
+      })
+    });
+    this.result.values.forEach(element => {
+      this.valuesRawData.push({
+        name: element.name,
+        value: (parseFloat(element.percentile) * 100).toFixed(2)
+      })
+    });
+  }
+  
   sendFile(){
     if(this.file == null){
       this.snackBar.open('Você deve selecionar um arquivo primeiro.', 'Fechar', {duration: 5000});
@@ -47,10 +84,14 @@ export class MainPersonalityPageComponent implements OnInit {
     let formData: FormData = new FormData();
     formData.append('upload', this.file, this.file.name);
     formData.append('lang', this.selectedLanguage);
+    this.initRawDataArrays();
     this.personalityService.getPersonality(formData).subscribe(
       data => { 
         this.sended = false;
         this.result = data.resultPersonality;
+        this.extractData();
+        this.areaResult = 'TI';
+        this.displayCharts = false;
         this.snackBar.open('Você pode modificar os parametros na aba "Modificar Parâmetros".', 'Fechar', {duration: 3000});
       },
       err => {

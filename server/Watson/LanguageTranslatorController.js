@@ -26,6 +26,9 @@ class LanguageTranslatorController{
                 model_id: `${sourceLanguage}-en`
             };
             return new Promise((resolve, reject) => {
+                if(sourceLanguage == 'en'){
+                    resolve(text);
+                }
                 this.watsonTranslator.translate(params, (err, result) => {
                     if(result && result.translations && result.translations[0]){
                         return resolve(result.translations[0].translation);

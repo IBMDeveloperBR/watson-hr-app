@@ -20,9 +20,54 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
 </div>
 
 <div class="result-text">
-  <p *ngIf="result">
-    {{result | json}}
-  </p>
+  <div *ngIf="result">
+    <div class="area-result">
+        <h3 style="text-align: center">De acordo com seu perfil:</h3>
+        <h3 style="text-align: center">Você se encaixa como: {{areaResult}}</h3>
+        <button mat-fab (click)="displayCharts = !displayCharts">
+            <mat-icon *ngIf="!displayCharts">arrow_down</mat-icon>
+            <mat-icon *ngIf="displayCharts">arrow_up</mat-icon>
+        </button>
+    </div>
+    
+    <div class="container" *ngIf="displayCharts">
+      <div class="row">
+        <div class="col-lg-6" style="min-height: 20vh;">
+          <h3 class="title">Personalidade</h3>
+          <ngx-charts-bar-horizontal
+              [results]="personalityRawData"
+              showXAxisLabel="true"
+              showYAxisLabel="true"
+              xAxisLabel="Porcentagem"
+              yAxis="true"
+              xAxis="true"
+          ></ngx-charts-bar-horizontal>
+        </div>
+        <div class="col-lg-6" style="min-height: 20vh;">
+          <h3 class="title">Necessidades</h3>
+          <ngx-charts-bar-horizontal
+            [results]="valuesRawData"
+            showXAxisLabel="true"
+            showYAxisLabel="true"
+            xAxisLabel="Porcentagem"
+            yAxis="true"
+            xAxis="true"
+          ></ngx-charts-bar-horizontal>
+        </div>
+        <div class="col-lg-12" style="min-height: 20vh; margin-top: 30px;">
+            <h3 class="title">Valores</h3>
+            <ngx-charts-bar-horizontal
+              [results]="needsRawData"
+              showXAxisLabel="true"
+              showYAxisLabel="true"
+              xAxisLabel="Porcentagem"
+              yAxis="true"
+              xAxis="true"
+            ></ngx-charts-bar-horizontal>
+          </div>
+      </div>
+    </div>
+  </div>
   <div *ngIf="!result" class="btn-send">
     <button mat-fab *ngIf="!sended" (click)="sendFile()">
       <mat-icon>send</mat-icon>
