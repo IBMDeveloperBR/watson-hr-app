@@ -12,6 +12,8 @@
     color: white;
     font-weight: bolder;
     margin-top: 1px;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .upload{
@@ -59,13 +61,37 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        min-height: 50vh;
         button{
             background-color: #4A4063;
             color: white;
             font-weight: bolder;
         }
     }
-
+    .area-result{
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+        h3{
+            order: 1;
+            width: 100%;
+            text-align: center;
+        }
+        button{
+            order: 1;
+            background-color: #4A4063;
+            color: white;
+            font-weight: bolder;
+        }
+        &:after{
+            content: '';
+            width: 100%;   
+        }
+    }
     .title{
         margin-left: 5%;
     }

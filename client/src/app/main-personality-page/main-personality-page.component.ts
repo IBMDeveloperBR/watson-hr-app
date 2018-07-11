@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { PersonalityService } from '../services/personality.service';
 
@@ -20,6 +20,9 @@ export class MainPersonalityPageComponent implements OnInit {
   needsRawData:Array<Object>;
   valuesRawData:Array<Object>;
 
+  @ViewChild('chartsRef') public chartsRef: ElementRef;
+  @ViewChild('areaResultRef') public areaResultRef: ElementRef
+
 
   constructor(
     private snackBar: MatSnackBar,
@@ -30,7 +33,8 @@ export class MainPersonalityPageComponent implements OnInit {
     this.selectedLanguage = '';
     this.fileName = '';
     this.areaResult = '';
-    this.sended = false;
+    this.sended = true;
+    this.result = [{result: 'Dump data'}];
     this.file = null;
     this.displayCharts = false;
     this.initRawDataArrays();
@@ -99,6 +103,16 @@ export class MainPersonalityPageComponent implements OnInit {
         this.snackBar.open('Ocorreu um erro. Tente novamente', 'Fechar', {duration: 3000});
       }
     );
+  }
+
+  displayChartsHandler(){
+    this.displayCharts = !this.displayCharts;
+    if(this.displayCharts) {
+        console.log(this.chartsRef.nativeElement);
+        this.chartsRef.nativeElement.scrollIntoView();
+    } else {
+      this.chartsRef.nativeElement.scrollIntoView();
+    }
   }
 
 }

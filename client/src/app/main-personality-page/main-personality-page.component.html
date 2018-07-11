@@ -21,16 +21,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
 
 <div class="result-text">
   <div *ngIf="result">
-    <div class="area-result">
-        <h3 style="text-align: center">De acordo com seu perfil:</h3>
-        <h3 style="text-align: center">Você se encaixa como: {{areaResult}}</h3>
-        <button mat-fab (click)="displayCharts = !displayCharts">
-            <mat-icon *ngIf="!displayCharts">arrow_down</mat-icon>
-            <mat-icon *ngIf="displayCharts">arrow_up</mat-icon>
+    <div class="area-result" id="areaResultRef" #areaResultRef>
+        <h3>De acordo com seu perfil:<br> Você se encaixa como: {{areaResult}}</h3>
+        <button mat-fab (click)="displayChartsHandler()">
+            <mat-icon *ngIf="!displayCharts">expand_more</mat-icon>
+            <mat-icon *ngIf="displayCharts">expand_less</mat-icon>
         </button>
     </div>
     
-    <div class="container" *ngIf="displayCharts">
+    <div class="container" id="chartsRef" [hidden]="!displayCharts" #chartsRef>
       <div class="row">
         <div class="col-lg-6" style="min-height: 20vh;">
           <h3 class="title">Personalidade</h3>
