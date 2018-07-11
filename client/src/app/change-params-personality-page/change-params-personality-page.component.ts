@@ -7,7 +7,7 @@ import { PersonalityService } from '../services/personality.service';
   styleUrls: ['./change-params-personality-page.component.scss']
 })
 export class ChangeParamsPersonalityPageComponent implements OnInit {
-  private params: Array<any>;
+  private params;
   private editParams:Array<any>;
 
   private step:string = 'values';
@@ -20,12 +20,12 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     this.editParams = null;
   }
 
-  setStep(index) {
-    this.step = index;
-  }
-
   setToEdit(index) {
     this.editParams = this.params[index];
   }
 
+  deleteArea(index) {
+    this.params.splice(index, 1);
+    this.personalityService.setParams(this.params);
+  }
 }

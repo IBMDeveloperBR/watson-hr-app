@@ -3,6 +3,9 @@
     <div class="col-lg-4" *ngFor="let param of params; let i = index;">
       <mat-card (click)="setToEdit(i)">
         <h4>{{ param.area }}</h4>
+        <mat-card-actions>
+          <button mat-icon-button (click)="deleteArea(i)"><mat-icon>delete</mat-icon></button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>

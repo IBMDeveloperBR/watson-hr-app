@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { MaterialModule } from './app.module.material';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import { CoolStorageModule } from '@angular-cool/storage';
 
 import { AppComponent } from './app.component';
 import { MainPersonalityPageComponent } from './main-personality-page/main-personality-page.component';
@@ -26,7 +27,8 @@ import { PersonalityService } from './services/personality.service';
     FormsModule,
     HttpClientModule,
     MaterialModule,
-    NgxChartsModule
+    NgxChartsModule,
+    CoolStorageModule
   ],
   providers: [
     PersonalityService
