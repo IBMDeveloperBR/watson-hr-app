@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const fileUpload = require('express-fileupload');
+const path = require('path');
 
 const PORT = process.env.PORT || 8000;
 
@@ -24,9 +25,16 @@ app.disable('x-powered-by');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(fileUpload());
+// Point static path to dist
+app.use(express.static(path.join(__dirname, '../client/dist/client/')));
 
 //API Routes
 require('./Routes')(app, express);
+
+// Call Angular
+app.all('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/client/index.html'));
+});
 
 //Error handler
 app.use((err, req, res, next) => {

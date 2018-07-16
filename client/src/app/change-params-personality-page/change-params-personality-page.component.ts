@@ -7,8 +7,8 @@ import { PersonalityService } from '../services/personality.service';
   styleUrls: ['./change-params-personality-page.component.scss']
 })
 export class ChangeParamsPersonalityPageComponent implements OnInit {
-  private params;
-  private editParams:Array<any>;
+  params;
+  editParams:Array<any>;
 
   private step:string = 'values';
   constructor(

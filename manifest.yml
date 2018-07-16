@@ -1,0 +1,7 @@
+---
+applications:
+- name: pcastro-watson-hr-app
+  memory: 256M
+  instances: 1
+  random-route: true
+  buildpack: https://bitbucket.org/cf-utilities/cf-buildpack-multi
