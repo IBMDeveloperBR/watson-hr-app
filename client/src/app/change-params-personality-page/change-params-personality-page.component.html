@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container" scroll="no">
+  
+  <button mat-fab color="primary" (click)="addArea()" id="add-btn"><mat-icon>add</mat-icon></button>
   <div class="row">
     <div class="col-lg-4" *ngFor="let param of params; let i = index;">
       <mat-card (click)="setToEdit(i)">

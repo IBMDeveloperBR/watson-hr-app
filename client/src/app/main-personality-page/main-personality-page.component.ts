@@ -50,7 +50,12 @@ export class MainPersonalityPageComponent implements OnInit {
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       this.file = fileList[0];
-      this.fileName = this.file.name;
+      if(this.file.type != "application/pdf"){
+        this.file = null;
+        this.snackBar.open('Somente PDF\'s são aceitos.', 'Fechar', {duration: 5000});
+      } else {
+        this.fileName = this.file.name;
+      }
     }
   }
 

@@ -1,0 +1,16 @@
+<form>
+  <div class="text-area">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nome da Área" [(ngModel)]="areaName" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+  </div>  
+  
+  <div class="btn-area">
+    <button mat-raised-button class="delete-btn" (click)="close(false)">
+      <i class="material-icons">cancel</i> Cancelar
+    </button>
+    <button mat-raised-button class="confirm-btn" (click)="close(areaName)">
+      <i class="material-icons">check</i> Criar
+    </button>
+  </div>
+  </form>

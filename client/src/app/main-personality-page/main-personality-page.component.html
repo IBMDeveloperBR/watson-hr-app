@@ -6,7 +6,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
   <label for="file-upload" class="custom-file-upload">
     {{ fileName || "Upload Curriculo" }} <i class="material-icons">attach_file</i>
   </label>
-  <input id="file-upload" type="file" (change)="fileChange($event)"/>
+  <input id="file-upload" type="file" (change)="fileChange($event)" accept="application/pdf"/>
   <mat-form-field>
     <mat-select placeholder="Idioma do arquivo" [(ngModel)]="selectedLanguage">
       <mat-option value="pt">
@@ -17,6 +17,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
       </mat-option>
     </mat-select>
   </mat-form-field>
+</div>
+
+<div *ngIf="!result" class="btn-send">
+  <button mat-fab *ngIf="!sended" (click)="sendFile()">
+    <mat-icon>send</mat-icon>
+  </button>
+  <mat-spinner color="#4A4063" *ngIf="sended"></mat-spinner>
 </div>
 
 <div class="result-text">
@@ -66,12 +73,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
           </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="!result" class="btn-send">
-    <button mat-fab *ngIf="!sended" (click)="sendFile()">
-      <mat-icon>send</mat-icon>
-    </button>
-    <mat-spinner color="#4A4063" *ngIf="sended"></mat-spinner>
   </div>
 </div>
 

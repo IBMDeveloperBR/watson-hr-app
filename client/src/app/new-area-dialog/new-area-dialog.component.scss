@@ -1,0 +1,27 @@
+mat-form-field{
+    width: 70%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.btn-area{
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .delete-btn {
+        color: white;
+        background-color: red;
+        width: 15%;
+        font-weight: bold;
+    }
+    .confirm-btn {
+        color: white;
+        background-color: green;
+        width: 15%;
+        font-weight: bold;
+    }
+}

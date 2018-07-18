@@ -1,3 +1,7 @@
+.container {
+    min-height: 92vh;
+}
+
 mat-card{
     margin: 10px;
     margin-top: 10vh;
@@ -20,4 +24,12 @@ mat-card{
     .mat-expansion-panel-header-title{
         min-width: 50%;
     }
+}
+
+#add-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 3%;
+    margin-right: 10%;
 }

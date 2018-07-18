@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalityService } from '../services/personality.service';
+import {MatDialog, MatSnackBar} from '@angular/material';
+import singleParam from '../services/singleParam';
+import { NewAreaDialogComponent } from '../new-area-dialog/new-area-dialog.component';
 
 @Component({
   selector: 'app-change-params-personality-page',
@@ -12,7 +15,9 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
 
   private step:string = 'values';
   constructor(
-    private personalityService: PersonalityService
+    private snackBar: MatSnackBar,
+    private personalityService: PersonalityService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -27,5 +32,20 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
   deleteArea(index) {
     this.params.splice(index, 1);
     this.personalityService.setParams(this.params);
+  }
+
+  addArea(){
+    let dialogRef = this.dialog.open(NewAreaDialogComponent, {
+      width: '75%'
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if(res) {
+        singleParam.area = res;
+        this.params.push(singleParam);
+        this.personalityService.setParams(this.params);
+        this.snackBar.open('Parâmetro criado com sucesso.', 'Fechar', {duration: 5000});
+      }
+    });
   }
 }

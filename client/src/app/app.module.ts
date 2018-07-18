@@ -13,13 +13,18 @@ import { MainPersonalityPageComponent } from './main-personality-page/main-perso
 import { ChangeParamsPersonalityPageComponent } from './change-params-personality-page/change-params-personality-page.component';
 import { NluPageComponent } from './nlu-page/nlu-page.component';
 import { PersonalityService } from './services/personality.service';
+import { NewAreaDialogComponent } from './new-area-dialog/new-area-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPersonalityPageComponent,
     ChangeParamsPersonalityPageComponent,
-    NluPageComponent
+    NluPageComponent,
+    NewAreaDialogComponent
+  ],
+  entryComponents: [
+    NewAreaDialogComponent
   ],
   imports: [
     BrowserModule,
