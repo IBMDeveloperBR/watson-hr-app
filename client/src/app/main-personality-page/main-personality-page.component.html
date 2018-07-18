@@ -28,15 +28,18 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
 
 <div class="result-text">
   <div *ngIf="result">
-    <div class="area-result" id="areaResultRef" #areaResultRef>
+    <div class="area-result" id="areaResultRef">
         <h3>De acordo com seu perfil:<br> Você se encaixa como: {{areaResult}}</h3>
         <button mat-fab (click)="displayChartsHandler()">
             <mat-icon *ngIf="!displayCharts">expand_more</mat-icon>
             <mat-icon *ngIf="displayCharts">expand_less</mat-icon>
         </button>
+        <button mat-fab id="reset-btn">
+            <mat-icon>loop</mat-icon>
+        </button>
     </div>
     
-    <div class="container" id="chartsRef" *ngIf="displayCharts" #chartsRef>
+    <div class="container" id="chartsRef" *ngIf="displayCharts">
       <div class="row">
         <div class="col-lg-6" style="min-height: 20vh;">
           <h3 class="title">Personalidade</h3>
@@ -74,8 +77,4 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
       </div>
     </div>
   </div>
-</div>
-
-<div class="result-per-ins">
-
 </div>

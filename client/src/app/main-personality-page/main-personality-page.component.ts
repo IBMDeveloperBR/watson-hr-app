@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { PersonalityService } from '../services/personality.service';
 
+declare const $;
+
 @Component({
   selector: 'app-main-personality-page',
   templateUrl: './main-personality-page.component.html',
@@ -19,10 +21,6 @@ export class MainPersonalityPageComponent implements OnInit {
   personalityRawData:Array<Object>;
   needsRawData:Array<Object>;
   valuesRawData:Array<Object>;
-
-  @ViewChild('chartsRef') public chartsRef: ElementRef;
-  @ViewChild('areaResultRef') public areaResultRef: ElementRef
-
 
   constructor(
     private snackBar: MatSnackBar,
@@ -63,19 +61,19 @@ export class MainPersonalityPageComponent implements OnInit {
     this.result.personality.forEach(element => {
       this.personalityRawData.push({
         name: element.name,
-        value: (parseFloat(element.percentile) * 100).toFixed(2)
+        value: (parseFloat(element.percentile)).toFixed(2)
       })
     });
     this.result.needs.forEach(element => {
       this.needsRawData.push({
         name: element.name,
-        value: (parseFloat(element.percentile) * 100).toFixed(2)
+        value: (parseFloat(element.percentile)).toFixed(2)
       })
     });
     this.result.values.forEach(element => {
       this.valuesRawData.push({
         name: element.name,
-        value: (parseFloat(element.percentile) * 100).toFixed(2)
+        value: (parseFloat(element.percentile)).toFixed(2)
       })
     });
   }
@@ -99,7 +97,7 @@ export class MainPersonalityPageComponent implements OnInit {
         this.sended = false;
         this.result = data.resultPersonality;
         this.extractData();
-        this.areaResult = 'TI';
+        this.areaResult = this.personalityService.runAnalysis(this.personalityRawData, this.needsRawData, this.valuesRawData);;
         this.displayCharts = false;
         this.snackBar.open('Você pode modificar os parametros na aba "Modificar Parâmetros".', 'Fechar', {duration: 3000});
       },
@@ -112,11 +110,14 @@ export class MainPersonalityPageComponent implements OnInit {
 
   displayChartsHandler(){
     this.displayCharts = !this.displayCharts;
-    if(this.displayCharts) {
-        console.log(this.chartsRef.nativeElement);
-        this.chartsRef.nativeElement.scrollIntoView();
+    if(this.displayCharts){
+      setTimeout(()=> {
+        const elem = document.getElementById('chartsRef');
+        elem.scrollIntoView({ block: 'end',  behavior: 'smooth' });
+      },100);
     } else {
-      this.chartsRef.nativeElement.scrollIntoView();
+      const elem = document.getElementById('areaResultRef');
+      elem.scrollIntoView({ block: 'end',  behavior: 'smooth' });
     }
   }
 
