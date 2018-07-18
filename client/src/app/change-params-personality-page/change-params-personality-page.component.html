@@ -1,6 +1,7 @@
-<div class="container" scroll="no">
+<div class="container">
   
   <button mat-fab color="primary" (click)="addArea()" id="add-btn"><mat-icon>add</mat-icon></button>
+  <button mat-fab color="primary" (click)="editArea()" id="save-btn"><mat-icon>save</mat-icon></button>
   <div class="row">
     <div class="col-lg-4" *ngFor="let param of params; let i = index;">
       <mat-card (click)="setToEdit(i)">
@@ -23,6 +24,17 @@
           Clique para modificar os parâmetros
         </mat-panel-description>
       </mat-expansion-panel-header>
+      <div *ngFor="let param of editParams.personality; let i = index;" class="sliders">
+          <span>{{param.name}}</span>
+          <mat-slider
+            color="primary"
+            max="1"
+            min="0"
+            step="0.01"
+            [thumbLabel]="true"
+            [(ngModel)]="param.min"
+          ></mat-slider>
+      </div>
     </mat-expansion-panel>
     <mat-expansion-panel >
       <mat-expansion-panel-header>
@@ -33,6 +45,17 @@
           Clique para modificar os parâmetros
         </mat-panel-description>
       </mat-expansion-panel-header>
+      <div *ngFor="let param of editParams.values; let i = index;" class="sliders">
+          <span>{{param.name}}</span>
+          <mat-slider
+            color="primary"
+            max="1"
+            min="0"
+            step="0.01"
+            [thumbLabel]="true"
+            [(ngModel)]="param.min"
+          ></mat-slider>
+      </div>
     </mat-expansion-panel>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -43,6 +66,17 @@
           Clique para modificar os parâmetros
         </mat-panel-description>
       </mat-expansion-panel-header>
+      <div *ngFor="let param of editParams.needs; let i = index;" class="sliders">
+          <span>{{param.name}}</span>
+          <mat-slider
+            color="primary"
+            max="1"
+            min="0"
+            step="0.01"
+            [thumbLabel]="true"
+            [(ngModel)]="param.min"
+          ></mat-slider>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

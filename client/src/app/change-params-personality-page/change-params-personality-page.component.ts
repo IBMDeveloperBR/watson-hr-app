@@ -34,6 +34,10 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     this.personalityService.setParams(this.params);
   }
 
+  editArea(){
+    this.personalityService.setParams(this.params);
+  }
+
   addArea(){
     let dialogRef = this.dialog.open(NewAreaDialogComponent, {
       width: '75%'

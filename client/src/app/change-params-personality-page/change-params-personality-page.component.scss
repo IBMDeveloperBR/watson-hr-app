@@ -26,10 +26,35 @@ mat-card{
     }
 }
 
+.sliders{
+    width: 100%;
+    position: relative;
+    span{
+        min-width: 40%;
+        margin-right: 5%;
+        margin-left: 5%;
+        display: inline-block;
+    }
+    mat-slider{
+        min-width: 45%;
+        margin-right: 5%;
+    }
+}
+
 #add-btn{
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 3%;
     margin-right: 10%;
+    background-color: #4A4063;
+}
+
+#save-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 3%;
+    margin-right: calc(10% + 56px + 25px);
+    background-color: #4A4063;
 }
