@@ -1,13 +1,13 @@
 <div class="container">
   
-  <button mat-fab color="primary" (click)="addArea()" id="add-btn"><mat-icon>add</mat-icon></button>
-  <button mat-fab color="primary" (click)="editArea()" id="save-btn"><mat-icon>save</mat-icon></button>
+  <button mat-fab color="primary" (click)="addArea()" id="add-btn" matTooltip="Criar nova Área"><mat-icon>add</mat-icon></button>
+  <button mat-fab color="primary" (click)="editArea()" id="save-btn" matTooltip="Salvar Mudanças"  *ngIf="editParams"><mat-icon>save</mat-icon></button>
   <div class="row">
     <div class="col-lg-4" *ngFor="let param of params; let i = index;">
-      <mat-card (click)="setToEdit(i)">
+      <mat-card (click)="setToEdit(i)" matTooltip="Editar parâmetros de {{param.area}}">
         <h4>{{ param.area }}</h4>
         <mat-card-actions>
-          <button mat-icon-button (click)="deleteArea(i)"><mat-icon>delete</mat-icon></button>
+          <button mat-icon-button (click)="deleteArea(i)" matTooltip="Deletar área"><mat-icon>delete</mat-icon></button>
         </mat-card-actions>
       </mat-card>
     </div>

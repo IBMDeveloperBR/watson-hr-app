@@ -28,11 +28,15 @@ export class MainPersonalityPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.resetVariables();
+  }
+
+  resetVariables(){
     this.selectedLanguage = '';
     this.fileName = '';
     this.areaResult = '';
-    this.sended = false;
-    this.result = null;
+    this.sended = true;
+    this.result = [];
     this.file = null;
     this.displayCharts = false;
     this.initRawDataArrays();

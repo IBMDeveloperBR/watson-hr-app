@@ -20,7 +20,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
 </div>
 
 <div *ngIf="!result" class="btn-send">
-  <button mat-fab *ngIf="!sended" (click)="sendFile()">
+  <button mat-fab *ngIf="!sended" (click)="sendFile()" matTooltip="Enviar Curriculo">
     <mat-icon>send</mat-icon>
   </button>
   <mat-spinner color="#4A4063" *ngIf="sended"></mat-spinner>
@@ -30,11 +30,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quos cum
   <div *ngIf="result">
     <div class="area-result" id="areaResultRef">
         <h3>De acordo com seu perfil:<br> Você se encaixa como: {{areaResult}}</h3>
-        <button mat-fab (click)="displayChartsHandler()">
-            <mat-icon *ngIf="!displayCharts">expand_more</mat-icon>
-            <mat-icon *ngIf="displayCharts">expand_less</mat-icon>
+        <button mat-fab (click)="displayChartsHandler()" *ngIf="!displayCharts" matTooltip="Ver mais resultados gerados">
+            <mat-icon>expand_more</mat-icon>
         </button>
-        <button mat-fab id="reset-btn">
+        <button mat-fab (click)="displayChartsHandler()" *ngIf="displayCharts" matTooltip="Ver menos resultados">
+          <mat-icon *ngIf="displayCharts">expand_less</mat-icon>
+        </button>
+        <button mat-fab id="reset-btn" matTooltip="Realizar nova Análise" (click)="resetVariables()">
             <mat-icon>loop</mat-icon>
         </button>
     </div>
