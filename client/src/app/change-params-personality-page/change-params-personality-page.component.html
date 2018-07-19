@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-lg-4 offset-lg-8">
         <mat-paginator [pageSize]="pageSize" showFirstLastButtons="false" [length]="params.length"
-        [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
+        [pageIndex]="currentPage" (page)="handlePage($event)">
         </mat-paginator>
     </div>
   </div>
