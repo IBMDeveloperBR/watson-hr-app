@@ -14,6 +14,26 @@
     margin-top: 1px;
     padding-left: 5%;
     padding-right: 5%;
+    animation: leftEntry 1s forwards 0s ease;
+}
+@keyframes leftEntry{
+    0%{
+        transform: rotate(0) translateX(-100%);
+    }
+    100%{
+        transform: rotate(0) translateX(0);
+    }
+}
+
+@keyframes opacityAnimation{
+    0%{
+        transform: rotate(0) translateY(0);
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(0) translateY(0);
+        opacity: 1;
+    }
 }
 
 .upload{
@@ -21,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: opacityAnimation 1.2s forwards 0s ease;
     input[type="file"] {
         display: none;
     }
@@ -62,6 +83,7 @@
     align-items: center;
     justify-content: center;
     min-height: 15vh;
+    animation: opacityAnimation 1.2s forwards 0s ease;
     button{
         background-color: #4A4063;
         color: white;

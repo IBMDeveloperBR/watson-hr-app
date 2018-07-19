@@ -4,10 +4,32 @@
 
 mat-card{
     margin: 10px;
-    margin-top: 10vh;
+    margin-top: 3vh;
     cursor: pointer;
+    animation: cardAnimation .6s forwards 0s linear;
     h4{
         text-align: center;
+    }
+}
+
+@keyframes cardAnimation{
+    0%{
+        transform: rotate(0) skewX(50deg) skewY(10deg);
+    }
+    51%{
+        transform: rotate(0) skewX(0) skewY(10deg);
+    }
+    100%{
+        transform: rotate(0) skewX(0);
+    }
+}
+
+@keyframes buttonsAnimation{
+    0%{
+        transform: rotate(0) translateX(300%);
+    }
+    100%{
+        transform: rotate(0) translateX(0);
     }
 }
 
@@ -42,12 +64,13 @@ mat-card{
 }
 
 #add-btn{
-    position: absolute;
+    position: absolute;    
     bottom: 0;
     right: 0;
     margin: 3%;
     margin-right: 10%;
     background-color: #4A4063;
+    animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #save-btn{
@@ -57,6 +80,7 @@ mat-card{
     margin: 3%;
     margin-right: calc(10% + 56px * 3);
     background-color: #4A4063;
+    animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #import-btn{
@@ -66,15 +90,18 @@ mat-card{
     margin: 3%;
     margin-right: calc(10% + 56px *2);
     background-color: #4A4063;
+    animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #export-btn{
+    display: inline-block;
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 3%;
     margin-right: calc(10% + 56px);
     background-color: #4A4063;
+    animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 input[type="file"] {

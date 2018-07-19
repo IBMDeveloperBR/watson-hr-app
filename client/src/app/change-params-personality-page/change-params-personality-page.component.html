@@ -1,8 +1,4 @@
 <div class="container">
-  <button mat-fab color="primary" (click)="addArea()" id="add-btn" matTooltip="Criar nova Área"><mat-icon>add</mat-icon></button>
-  <button mat-fab color="primary" (click)="editArea()" id="save-btn" matTooltip="Salvar Mudanças"  *ngIf="editParams"><mat-icon>save</mat-icon></button>
-  <button mat-fab color="primary" (click)="exportJSON()" id="export-btn" matTooltip="Exportar Parâmetros"><mat-icon>cloud_upload</mat-icon></button>
-  <button mat-fab color="primary" id="import-btn" matTooltip="Importar Parâmetros" (click)="triggerInput()"><mat-icon>cloud_download</mat-icon></button>
   <input id="import-input" type="file" (change)="importJSON($event)" accept="application/json">
   
   <div class="row">
@@ -90,3 +86,9 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+<footer>
+    <button mat-fab color="primary" (click)="addArea()" id="add-btn" matTooltip="Criar nova Área"><mat-icon>add</mat-icon></button>
+    <button mat-fab color="primary" (click)="editArea()" id="save-btn" matTooltip="Salvar Mudanças"  *ngIf="editParams"><mat-icon>save</mat-icon></button>
+    <button mat-fab color="primary" (click)="exportJSON()" id="export-btn" matTooltip="Exportar Parâmetros"><mat-icon>cloud_upload</mat-icon></button>
+    <button mat-fab color="primary" id="import-btn" matTooltip="Importar Parâmetros" (click)="triggerInput()"><mat-icon>cloud_download</mat-icon></button>
+</footer>
