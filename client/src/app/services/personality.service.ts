@@ -17,6 +17,10 @@ export class PersonalityService {
     return this.http.post('/api/personality/upload', formData);
   }
 
+  importJSON(formData: FormData): any {
+    return this.http.post('/api/personality/import', formData);
+  }
+
   getBaseParams() {
     const storageParams = this.getParams();
     if(storageParams) {

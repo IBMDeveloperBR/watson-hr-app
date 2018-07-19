@@ -35,8 +35,8 @@ export class MainPersonalityPageComponent implements OnInit {
     this.selectedLanguage = '';
     this.fileName = '';
     this.areaResult = '';
-    this.sended = true;
-    this.result = [];
+    this.sended = false;
+    this.result = null;
     this.file = null;
     this.displayCharts = false;
     this.initRawDataArrays();
@@ -54,7 +54,7 @@ export class MainPersonalityPageComponent implements OnInit {
       this.file = fileList[0];
       if(this.file.type != "application/pdf"){
         this.file = null;
-        this.snackBar.open('Somente PDF\'s são aceitos.', 'Fechar', {duration: 5000});
+        this.snackBar.open('Somente PDF\'s são aceitos.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});
       } else {
         this.fileName = this.file.name;
       }
@@ -84,11 +84,11 @@ export class MainPersonalityPageComponent implements OnInit {
   
   sendFile(){
     if(this.file == null){
-      this.snackBar.open('Você deve selecionar um arquivo primeiro.', 'Fechar', {duration: 5000});
+      this.snackBar.open('Você deve selecionar um arquivo primeiro.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});
       return;
     }
     if(this.selectedLanguage == ''){
-      this.snackBar.open('Você deve selecionar um idioma primeiro.', 'Fechar', {duration: 5000});
+      this.snackBar.open('Você deve selecionar um idioma primeiro.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});
       return;
     }
     this.sended = true;
@@ -103,11 +103,11 @@ export class MainPersonalityPageComponent implements OnInit {
         this.extractData();
         this.areaResult = this.personalityService.runAnalysis(this.personalityRawData, this.needsRawData, this.valuesRawData);;
         this.displayCharts = false;
-        this.snackBar.open('Você pode modificar os parametros na aba "Modificar Parâmetros".', 'Fechar', {duration: 3000});
+        this.snackBar.open('Você pode modificar os parametros na aba "Modificar Parâmetros".', 'Fechar', {duration: 3000, panelClass: ['custom-snackbar']});
       },
       err => {
         this.sended = false;
-        this.snackBar.open('Ocorreu um erro. Tente novamente', 'Fechar', {duration: 3000});
+        this.snackBar.open('Ocorreu um erro. Tente novamente', 'Fechar', {duration: 3000, panelClass: ['custom-snackbar']});
       }
     );
   }

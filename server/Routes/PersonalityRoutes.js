@@ -14,9 +14,14 @@ module.exports = {
                         .then(englishText => Watson.PersonalityInsights.getProfile(englishText))
                         .then(resultPersonality => Handlers.deleteFile(fileName, resultPersonality))
                         .then(resultPersonality => res.json({ status: 'Success', resultPersonality }))
-                        .catch((err) => res.json({ status: 'Bad Result', err: err }));
+                        .catch(err => res.status(500).json({ status: 'Bad Result', err: err }));
                 })
                 .catch((err) => res.json({status: 'Bad Result', err: err}))
+        });
+
+        route.post('/import', (req, res, next) => {
+            const file = req.files.upload;
+            res.json(JSON.parse(file.data.toString()));
         });
         return route;
     }
