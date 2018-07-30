@@ -12,7 +12,7 @@ export class UploadDialogComponent implements OnInit {
   fileName: string;
 
   examples = [
-    'João_MKT.pdf', 'Maria_TI.pdf', 'Antônio_Vendas.pdf'
+    'Joao_MKT.pdf', 'Maria_TI.pdf', 'Antonio_Vendas.pdf'
   ];
 
   constructor(
@@ -43,6 +43,11 @@ export class UploadDialogComponent implements OnInit {
     else {
       this.dialogRef.close({file: this.file, lang: 'pt'});
     }
+  }
+
+  getFileFromExamples(event){
+    this.file = event;
+    this.fileName = this.file.name;
   }
 
 }

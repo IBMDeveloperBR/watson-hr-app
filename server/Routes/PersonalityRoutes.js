@@ -1,5 +1,6 @@
 const Watson = require('../Watson');
 const Handlers = require('../Handlers');
+const path = require('path');
 
 module.exports = {
     root: '/api/personality',
@@ -22,6 +23,10 @@ module.exports = {
         route.post('/import', (req, res, next) => {
             const file = req.files.upload;
             res.json(JSON.parse(file.data.toString()));
+        });
+
+        route.get('/example-cv/:file', (req, res) => {
+            res.download(path.join(__dirname, `../Uploads/${req.params.file}`));
         });
         return route;
     }

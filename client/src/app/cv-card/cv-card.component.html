@@ -1,8 +1,6 @@
-<div class="cv">
-  <div class="page">
-    
-  </div>
+<div class="cv" (click)="sendEvent()" matTooltip="Usar {{name}} na Análise" matTooltipPosition="before">
   <div class="description">
-    <p>{{name}}</p>
+    <span>{{name}}</span> 
+    <button mat-icon-button (click)="download()" matTooltip="Baixar {{name}}"><mat-icon>cloud_download</mat-icon></button>
   </div>
 </div>

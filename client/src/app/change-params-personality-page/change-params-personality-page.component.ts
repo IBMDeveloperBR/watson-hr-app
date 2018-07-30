@@ -46,7 +46,6 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
       this.activeCtrl[element] = false;
     });
     this.activeCtrl[i] = true;
-    console.log(this.activeCtrl[i]);
   }
 
   deleteArea(index) {

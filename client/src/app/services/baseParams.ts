@@ -185,11 +185,11 @@ export default {
       "personality": [
         {
           "name": "Abertura",
-          "min": 0.5
+          "min": 0.7
         },
         {
           "name": "Escrupulosidade",
-          "min": 0.5
+          "min": 0.2
         },
         {
           "name": "Extroversão",
@@ -197,29 +197,29 @@ export default {
         },
         {
           "name": "Amabilidade",
-          "min": 0.5
+          "min": 0.8
         },
         {
           "name": "Faixa emocional",
-          "min": 0.5
+          "min": 0.8
         }
       ],
       "needs": [
         {
         "name": "Desafio",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Curiosidade",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Empolgação",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Harmonia",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Ideal",
@@ -227,37 +227,37 @@ export default {
         },
         {
         "name": "Liberdade",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Amor",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Natureza prática",
-        "min": 0.5
+        "min": 0.4
         },
         {
         "name": "Expressão da própria personalidade",
-        "min": 0.5
+        "min": 0.7
         },
         {
         "name": "Estabilidade",
-        "min": 0.5
+        "min": 0.3
         }
       ],
       "values": [
         {
           "name": "Conservação",
-          "min": 0.5
+          "min": 0.1
         },
         {
           "name": "Abertura à mudança",
-          "min": 0.5
+          "min": 0.8
         },
         {
           "name": "Hedonismo",
-          "min": 0.5
+          "min": 0.1
         },
         {
           "name": "Autocrescimento",
@@ -265,7 +265,7 @@ export default {
         },
         {
           "name": "Autotranscendência",
-          "min": 0.5
+          "min": 0.7
         },
         
       ]

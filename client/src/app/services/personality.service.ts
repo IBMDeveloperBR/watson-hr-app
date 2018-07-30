@@ -21,6 +21,10 @@ export class PersonalityService {
     return this.http.post('/api/personality/import', formData);
   }
 
+  getExampleCv(fileName:string){
+    return this.http.get('/api/personality/example-cv/'+ fileName, {responseType: "blob", headers: {'Accept': 'application/pdf'}});
+  }
+
   getBaseParams() {
     const storageParams = this.getParams();
     if(storageParams) {

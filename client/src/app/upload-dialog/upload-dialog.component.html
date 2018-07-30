@@ -1,7 +1,7 @@
 <div class="select-file">
   <div class="row">
     <div class="col-lg-4 col-xl-4 col-md-4" *ngFor="let example of examples">
-      <app-cv-card [name]="example"></app-cv-card>
+      <app-cv-card [name]="example" (pdfClick)="getFileFromExamples($event)"></app-cv-card>
     </div>
   </div>
   
