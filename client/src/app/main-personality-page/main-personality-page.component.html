@@ -3,10 +3,9 @@
 </div>
 
 <div class="upload" *ngIf="!result">
-  <label for="file-upload" class="custom-file-upload">
+  <label (click)="openDialog()" class="custom-file-upload">
     {{ fileName || "Upload Curriculo" }} <i class="material-icons">attach_file</i>
   </label>
-  <input id="file-upload" type="file" (change)="fileChange($event)" accept="application/pdf"/>
   <mat-form-field>
     <mat-select placeholder="Idioma do arquivo" [(ngModel)]="selectedLanguage">
       <mat-option value="pt">

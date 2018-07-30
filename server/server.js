@@ -6,10 +6,23 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const fileUpload = require('express-fileupload');
 const path = require('path');
+const compress = require('shrink-ray');
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
+
+app.use(compress({
+    cache: (req, res) => {
+        return true;
+    },
+    brotli: {
+        quality: 6
+    },
+    zlib: {
+        quality: 6
+    }
+}));
 
 dotenv.config();
 app.use(morgan(process.env.NODE_ENV || 'dev'));

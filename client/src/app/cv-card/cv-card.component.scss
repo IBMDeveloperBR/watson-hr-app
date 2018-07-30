@@ -1,0 +1,21 @@
+.cv{
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: -4px -2px 6px -2px rgba(135,130,135,1);
+    .page{
+        width: 100%;
+        height: 15vh;
+        background-color: rgba(135,130,135,1);
+    }
+    .description{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #4A4063;
+        color: white;
+        width: 100%;
+        height: 5vh;
+    }
+}

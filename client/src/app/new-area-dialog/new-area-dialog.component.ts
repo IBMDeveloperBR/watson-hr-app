@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ChangeParamsPersonalityPageComponent } from '../change-params-personality-page/change-params-personality-page.component';
 
 @Component({

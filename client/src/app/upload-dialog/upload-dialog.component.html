@@ -1,0 +1,23 @@
+<div class="select-file">
+  <div class="row">
+    <div class="col-lg-4 col-xl-4 col-md-4" *ngFor="let example of examples">
+      <app-cv-card [name]="example"></app-cv-card>
+    </div>
+  </div>
+  
+  <div class="upload">
+      <label for="file-upload" class="custom-file-upload">
+          {{ fileName || "Upload Curriculo" }} <i class="material-icons">attach_file</i>
+        </label>
+        <input id="file-upload" type="file" (change)="fileChange($event)" accept="application/pdf"/>
+  </div>
+</div>
+
+<div class="btn-area">
+  <button mat-raised-button class="delete-btn" (click)="send(false)">
+    <i class="material-icons">cancel</i> Cancelar
+  </button>
+  <button mat-raised-button class="confirm-btn" (click)="send(true)">
+    <i class="material-icons">check</i> Enviar
+  </button>
+</div>

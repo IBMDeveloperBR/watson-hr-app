@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 import { PersonalityService } from '../services/personality.service';
+import { UploadDialogComponent } from '../upload-dialog/upload-dialog.component';
 
 declare const $;
 
@@ -24,7 +25,8 @@ export class MainPersonalityPageComponent implements OnInit {
 
   constructor(
     private snackBar: MatSnackBar,
-    private personalityService: PersonalityService
+    private personalityService: PersonalityService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -48,19 +50,6 @@ export class MainPersonalityPageComponent implements OnInit {
     this.valuesRawData = [];
   }
 
-  fileChange(event: HTMLInputEvent) {
-    const fileList: FileList = event.target.files;
-    if (fileList.length > 0) {
-      this.file = fileList[0];
-      if(this.file.type != "application/pdf"){
-        this.file = null;
-        this.snackBar.open('Somente PDF\'s são aceitos.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});
-      } else {
-        this.fileName = this.file.name;
-      }
-    }
-  }
-
   extractData(){
     this.result.personality.forEach(element => {
       this.personalityRawData.push({
@@ -82,6 +71,21 @@ export class MainPersonalityPageComponent implements OnInit {
     });
   }
   
+  openDialog(){
+    let dialogRef = this.dialog.open(UploadDialogComponent, {
+      width: '75%'
+    });
+
+    dialogRef.afterClosed().subscribe((res) => {
+      if(res) {
+        this.file = res.file;
+        this.fileName = res.file.name;
+        this.selectedLanguage = res.lang;
+      }
+    });
+
+  }
+
   sendFile(){
     if(this.file == null){
       this.snackBar.open('Você deve selecionar um arquivo primeiro.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});

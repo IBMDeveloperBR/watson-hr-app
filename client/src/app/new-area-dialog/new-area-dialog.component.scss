@@ -14,14 +14,19 @@ mat-form-field{
     justify-content: center;
     .delete-btn {
         color: white;
-        background-color: red;
+        background-color: #C65366;
         width: 15%;
+        margin-right: 5px;
         font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .confirm-btn {
         color: white;
-        background-color: green;
+        background-color: #53AA73;
         width: 15%;
         font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
