@@ -6,20 +6,22 @@ mat-card{
     margin: 10px;
     margin-top: 3vh;
     cursor: pointer;
-    animation: cardAnimation .4s forwards 0s linear;
+    animation: cardAnimation .25s forwards 0s linear;
+    transition: all .2s ease-in .2s;
     h4{
         text-align: center;
     }
 }
 
+.active{
+    border-right: 20px solid #4A4063;
+}
+
 @keyframes cardAnimation{
-    0%{
-        transform: rotate(0) skewX(50deg) skewY(10deg);
+    0% {
+        transform: rotate(0) skewX(60deg);
     }
-    51%{
-        transform: rotate(0) skewX(0) skewY(10deg);
-    }
-    100%{
+    100% {
         transform: rotate(0) skewX(0);
     }
 }
@@ -39,7 +41,7 @@ mat-card{
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 60vh;
+    min-height: 40vh;
     mat-accordion{
         width: 100%;
     }
@@ -64,44 +66,37 @@ mat-card{
 }
 
 #add-btn{
-    position: absolute;    
-    bottom: 0;
-    right: 0;
-    margin: 3%;
-    margin-right: 10%;
+    margin-right: 5px;
     background-color: #4A4063;
     animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #save-btn{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 3%;
-    margin-right: calc(10% + 56px * 3);
+    margin-right: 5px;
     background-color: #4A4063;
     animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #import-btn{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 3%;
-    margin-right: calc(10% + 56px *2);
+    margin-right: 5px;
     background-color: #4A4063;
     animation: buttonsAnimation .5s forwards 0s linear;
 }
 
 #export-btn{
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 3%;
-    margin-right: calc(10% + 56px);
+    margin-right: 5px;
     background-color: #4A4063;
     animation: buttonsAnimation .5s forwards 0s linear;
+}
+
+footer{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    width: 100%;
+    float: right;
 }
 
 input[type="file"] {

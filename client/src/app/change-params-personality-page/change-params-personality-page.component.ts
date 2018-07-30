@@ -20,6 +20,7 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
   currentPage: number;
   paramsPage: Array<any>;
   pageSize:number;
+  activeCtrl = {};
 
   private step:string = 'values';
   constructor(
@@ -33,12 +34,19 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     this.params = this.personalityService.getBaseParams();
     this.currentPage = 0;
     this.editParams = null;
-    this.updatePage();
+    this.updatePage();  
+    $('mat-card').on('click', function(){
+      $(this).toggleClass('active');
+    });
   }
-
   setToEdit(index) {
     const i= (this.currentPage * this.pageSize) + index;
     this.editParams = this.paramsPage[i];
+    Object.keys(this.activeCtrl).forEach(element => {
+      this.activeCtrl[element] = false;
+    });
+    this.activeCtrl[i] = true;
+    console.log(this.activeCtrl[i]);
   }
 
   deleteArea(index) {

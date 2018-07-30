@@ -3,7 +3,7 @@
   
   <div class="row">
     <div class="col-lg-4" *ngFor="let param of paramsPage; let i = index;">
-      <mat-card (click)="setToEdit(i)" matTooltip="Editar parâmetros de {{param.area}}">
+      <mat-card (click)="setToEdit(i)" [class.active]="activeCtrl[(currentPage * pageSize) + i]" matTooltip="Editar parâmetros de {{param.area}}">
         <h4>{{ param.area }}</h4>
         <mat-card-actions>
           <button mat-icon-button (click)="deleteArea(i)" matTooltip="Deletar área"><mat-icon>delete</mat-icon></button>
