@@ -2,24 +2,25 @@
     <mat-horizontal-stepper #stepper>
       <mat-step>
         <ng-template matStepLabel>Como a personalidade é definida?</ng-template>
-        <p>Usamos seu currículo para determinar sua personalidade, para isso convertemos o pdf em texto e enviamos para o Watson.</p>
-        <p>Por fim usamos o Watson Personality Insights para determinar sua personalidade.</p>
+        <p>Usamos seu currículo para determinar sua personalidade, para isso convertemos o pdf em texto e enviamos para o análise.</p>
+        <p>Por fim, usamos o Watson Personality Insights para determinar sua personalidade.</p>
+        <p><b>IMPORTANTE:</b> Esta aplicação não armazena nenhum dado pessoal do usuário.</p>
         <div class="flow-btn-area">
             <button mat-raised-button matStepperNext>Próximo</button>
         </div>
       </mat-step>
       <mat-step>
           <ng-template matStepLabel>Como a área é definida?</ng-template>
-          <p>Apos isso, usamos os parametros definidos na aba "Modificar Parâmetros", para determinar uma pontuação para sua personalidade com base nas áreas</p>
-          <p>A área(s) com maior pontuação é a área exibida no resultado.</p>
-          <p>Veja os Resultados na Próxima aba:</p>
+          <p>Usamos os parâmetros definidos na aba "Modificar Parâmetros", para determinar uma pontuação com base nas áreas e sua personalidade.</p>
+          <p>A área(s) com maior pontuação é definida como sua ára de vocação.</p>
+          <p>Veja os Resultados na Próxima aba.</p>
           <div class="flow-btn-area">
               <button mat-raised-button matStepperPrevious>Voltar</button>
               <button mat-raised-button matStepperNext>Próximo</button>
           </div>
       </mat-step>
       <mat-step>
-        <ng-template matStepLabel>Pontuação</ng-template>
+        <ng-template matStepLabel>Sua Pontuação</ng-template>
           <table mat-table [dataSource]="data" matSort class="mat-elevation-z8">
             <ng-container matColumnDef="area">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Área </th>
