@@ -1,0 +1,35 @@
+.btn-area{
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .confirm-btn {
+        color: white;
+        background-color: #53AA73;
+        width: 15%;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.flow-btn-area{
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button{
+        color: white;
+        background-color: #4A4063;
+        width: 15%;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+}
+
+table {
+    width: 100%;
+    margin-bottom: 15px;
+}

@@ -35,8 +35,11 @@
         <button mat-fab (click)="displayChartsHandler()" *ngIf="displayCharts" matTooltip="Ver menos resultados">
           <mat-icon *ngIf="displayCharts">expand_less</mat-icon>
         </button>
-        <button mat-fab id="reset-btn" matTooltip="Realizar nova Análise" (click)="resetVariables()">
+        <button mat-fab class="right-btn" matTooltip="Realizar nova Análise" (click)="resetVariables()">
             <mat-icon>loop</mat-icon>
+        </button>
+        <button mat-fab class="right-btn" matTooltip="Como funciona a Análise?" (click)="openInfoDialog()">
+            <mat-icon>info</mat-icon>
         </button>
     </div>
     

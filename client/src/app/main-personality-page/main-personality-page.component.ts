@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { PersonalityService } from '../services/personality.service';
 import { UploadDialogComponent } from '../upload-dialog/upload-dialog.component';
+import { InfoAboutResultDialogComponent } from '../info-about-result-dialog/info-about-result-dialog.component';
 
 declare const $;
 
@@ -22,6 +23,7 @@ export class MainPersonalityPageComponent implements OnInit {
   personalityRawData:Array<Object>;
   needsRawData:Array<Object>;
   valuesRawData:Array<Object>;
+  resObject:any;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -105,7 +107,8 @@ export class MainPersonalityPageComponent implements OnInit {
         this.sended = false;
         this.result = data.resultPersonality;
         this.extractData();
-        this.areaResult = this.personalityService.runAnalysis(this.personalityRawData, this.needsRawData, this.valuesRawData);;
+        this.resObject = this.personalityService.runAnalysis(this.personalityRawData, this.needsRawData, this.valuesRawData);
+        this.areaResult = this.resObject['resposta'];
         this.displayCharts = false;
         this.snackBar.open('Você pode modificar os parametros na aba "Modificar Parâmetros".', 'Fechar', {duration: 3000, panelClass: ['custom-snackbar']});
       },
@@ -129,6 +132,14 @@ export class MainPersonalityPageComponent implements OnInit {
     }
   }
 
+  openInfoDialog(){
+    const dialogRef = this.dialog.open(InfoAboutResultDialogComponent, {
+      width: '75%',
+      data: {
+        data: this.resObject.data
+      }
+    });
+  }
 }
 
 /**

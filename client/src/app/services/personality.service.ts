@@ -68,6 +68,14 @@ export class PersonalityService {
       });
       el.points = points;
     });
+    let res = {};
+    res['data'] = [];
+    params.forEach((e) => {
+      let newElem = {};
+      newElem['points'] = e.points;
+      newElem['area'] = e.area;
+      res['data'].push(newElem);
+    });
     const maxPoints = params.reduce((a, b) => {
       return Math.max(parseInt(a.points || a), parseInt(b.points || b));
     });
@@ -76,6 +84,7 @@ export class PersonalityService {
     params.forEach((el) => {
       if(el.points == maxPoints) resArray.push(el.area);
     });
-    return resArray.join(', ')
+    res['resposta'] =  resArray.join(', ');
+    return res;
   }
 }

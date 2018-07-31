@@ -17,6 +17,7 @@ import { NewAreaDialogComponent } from './new-area-dialog/new-area-dialog.compon
 import { UploadDialogComponent } from './upload-dialog/upload-dialog.component';
 import { CvCardComponent } from './cv-card/cv-card.component';
 import { InfoParamsDialogComponent } from './info-params-dialog/info-params-dialog.component';
+import { InfoAboutResultDialogComponent } from './info-about-result-dialog/info-about-result-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,14 @@ import { InfoParamsDialogComponent } from './info-params-dialog/info-params-dial
     NewAreaDialogComponent,
     UploadDialogComponent,
     CvCardComponent,
-    InfoParamsDialogComponent
+    InfoParamsDialogComponent,
+    InfoAboutResultDialogComponent
   ],
   entryComponents: [
     NewAreaDialogComponent,
     UploadDialogComponent,
-    InfoParamsDialogComponent
+    InfoParamsDialogComponent,
+    InfoAboutResultDialogComponent
   ],
   imports: [
     BrowserModule,
