@@ -11,7 +11,7 @@ export class CvCardComponent implements OnInit {
   @Input('name') name:string;
   file:File;
   blob:Blob;
-  @Output() pdfClick: EventEmitter<File> = new EventEmitter<File>(); //creating an output event
+  @Output() pdfClick: EventEmitter<File> = new EventEmitter<File>();
   constructor(
     private personalityService: PersonalityService
   ) { }
@@ -25,7 +25,7 @@ export class CvCardComponent implements OnInit {
     });
   }
 
-  sendEvent(event){
+  sendEvent(){
     this.pdfClick.emit(this.file);
   }
 
