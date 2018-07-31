@@ -4,6 +4,7 @@ import {MatDialog, MatSnackBar} from '@angular/material';
 import singleParam from '../services/singleParam';
 import { NewAreaDialogComponent } from '../new-area-dialog/new-area-dialog.component';
 import {saveAs} from 'file-saver/FileSaver';
+import { InfoParamsDialogComponent } from '../info-params-dialog/info-params-dialog.component';
 
 declare const $:any;
 
@@ -34,10 +35,7 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     this.params = this.personalityService.getBaseParams();
     this.currentPage = 0;
     this.editParams = null;
-    this.updatePage();  
-    $('mat-card').on('click', function(){
-      $(this).toggleClass('active');
-    });
+    this.updatePage();
   }
   setToEdit(index) {
     const i= (this.currentPage * this.pageSize) + index;

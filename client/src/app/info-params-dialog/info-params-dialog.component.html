@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="text">
+    <h4>Como funciona os parâmetros?</h4>
+    <p>Os valores setados seguem a seguinte lógica: Valor mínimo que desejo dessa característica.</p>
+    <p><b>Exemplo:</b> Caso você deseje que o minimo de Curiosidade para alguém da área de Vendas seja 60%, basta setar 0.6.</p>
+  </div>
+  <mat-checkbox [(ngModel)]="showDialog">Não exibir esse diálogo novamente.</mat-checkbox>
+  <div class="btn-area">
+    <button mat-raised-button class="confirm-btn" (click)="exit()">
+      <i class="material-icons">check</i> Confirmar
+    </button>
+  </div>
+</div>

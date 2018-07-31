@@ -16,6 +16,7 @@ import { PersonalityService } from './services/personality.service';
 import { NewAreaDialogComponent } from './new-area-dialog/new-area-dialog.component';
 import { UploadDialogComponent } from './upload-dialog/upload-dialog.component';
 import { CvCardComponent } from './cv-card/cv-card.component';
+import { InfoParamsDialogComponent } from './info-params-dialog/info-params-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,13 @@ import { CvCardComponent } from './cv-card/cv-card.component';
     NluPageComponent,
     NewAreaDialogComponent,
     UploadDialogComponent,
-    CvCardComponent
+    CvCardComponent,
+    InfoParamsDialogComponent
   ],
   entryComponents: [
     NewAreaDialogComponent,
-    UploadDialogComponent
+    UploadDialogComponent,
+    InfoParamsDialogComponent
   ],
   imports: [
     BrowserModule,

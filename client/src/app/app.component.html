@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group (selectedTabChange)="changeTab($event)"> 
   <mat-tab label="Descubra sua Vocação"> <app-main-personality-page></app-main-personality-page> </mat-tab>
   <mat-tab label="Modificar Parâmetros"> <app-change-params-personality-page></app-change-params-personality-page> </mat-tab>
 </mat-tab-group>
