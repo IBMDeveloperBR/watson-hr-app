@@ -1,4 +1,9 @@
 <div class="select-file">
+  <div class="description">
+    <h4>
+      Escolha um arquivo de exemplo abaixo.<br>Ou se preferir selecione um arquivo da sua máquina.
+    </h4>
+  </div>
   <div class="row">
     <div class="col-lg-4 col-xl-4 col-md-4" *ngFor="let example of examples">
       <app-cv-card [name]="example" (pdfClick)="getFileFromExamples($event)"></app-cv-card>
