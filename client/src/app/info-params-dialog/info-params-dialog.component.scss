@@ -12,6 +12,7 @@
 
 .text {
     margin-bottom: 10px;
+    text-align: justify;
     h4{
         text-align: center;
     }
@@ -31,4 +32,25 @@
         padding-left: 5px;
         padding-right: 5px;
     }
+}
+
+@media screen and (max-width: 800px) {
+    .text .reminder{
+        font-size: 13px;
+    }
+    .confirm-btn span{
+        display: none;
+    }
+
+    .reminder i{
+        position: absolute;
+        top: 20px;
+        font-size: 21px;
+    }
+
+    mat-checkbox span {
+        font-size: 13px;
+        // width: 100%;
+    }
+    
 }

@@ -59,3 +59,22 @@ input[type="file"] {
         padding-right: 5px;
     }
 }
+@media screen and (max-width: 800px) {
+    .description{
+        h4{
+            font-size: 13px;
+        }
+    }
+
+    .btn-area {
+        button{
+            span{
+                display: none
+            }
+        }
+    }
+
+    .upload{
+        font-size: 13px;
+    }
+}

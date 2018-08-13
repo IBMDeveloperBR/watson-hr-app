@@ -28,3 +28,11 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .description {
+        span {
+            font-size: 13px;
+        }
+    }
+}

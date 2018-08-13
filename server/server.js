@@ -9,8 +9,21 @@ const path = require('path');
 const compress = require('shrink-ray');
 
 const PORT = process.env.PORT || 8000;
+const ENV = process.env.NODE_ENV;
 
 const app = express();
+
+if(ENV === 'production'){
+    app.enable('trust proxy');
+
+    app.use ((req, res, next) => {
+      if (req.secure || process.env.BLUEMIX_REGION === undefined) {
+        next();
+      } else {
+        res.redirect('https://' + req.headers.host + req.url);
+      }
+    });
+}
 
 app.use(compress({
     cache: (req, res) => {
