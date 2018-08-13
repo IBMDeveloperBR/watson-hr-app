@@ -39,8 +39,8 @@ export class MainPersonalityPageComponent implements OnInit {
     this.selectedLanguage = '';
     this.fileName = '';
     this.areaResult = '';
-    this.sended = true;
-    this.result = [];
+    this.sended = false;
+    this.result = null;
     this.file = null;
     this.displayCharts = false;
     this.initRawDataArrays();
