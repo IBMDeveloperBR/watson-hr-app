@@ -39,7 +39,7 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
   }
   setToEdit(index) {
     const i= (this.currentPage * this.pageSize) + index;
-    this.editParams = this.paramsPage[i];
+    this.editParams = this.params[i];
     Object.keys(this.activeCtrl).forEach(element => {
       this.activeCtrl[element] = false;
     });
@@ -52,10 +52,12 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     this.params.splice(i, 1);
     this.personalityService.setParams(this.params);
     this.updatePage();
+    this.editParams = null;
   }
 
   editArea(){
     this.personalityService.setParams(this.params);
+    this.snackBar.open('Alterações salvas com sucesso.', 'Fechar', {duration: 5000, panelClass: ['custom-snackbar']});
   }
 
   addArea(){
@@ -91,6 +93,7 @@ export class ChangeParamsPersonalityPageComponent implements OnInit {
     }
     
     this.paramsPage = this.params.slice(init, end);
+    this.editParams = null;
   }
 
   triggerInput(){
