@@ -4,7 +4,7 @@
 
 <div class="upload" *ngIf="!result">
   <label (click)="openDialog()" class="custom-file-upload">
-    {{ fileName || "Upload Curriculo" }} <i class="material-icons">attach_file</i>
+    <span>{{ fileName || "Upload Curriculo" }}</span><i class="material-icons">attach_file</i>
   </label>
   <mat-form-field>
     <mat-select placeholder="Idioma do arquivo" [(ngModel)]="selectedLanguage">

@@ -11,7 +11,6 @@ import { CoolStorageModule } from '@angular-cool/storage';
 import { AppComponent } from './app.component';
 import { MainPersonalityPageComponent } from './main-personality-page/main-personality-page.component';
 import { ChangeParamsPersonalityPageComponent } from './change-params-personality-page/change-params-personality-page.component';
-import { NluPageComponent } from './nlu-page/nlu-page.component';
 import { PersonalityService } from './services/personality.service';
 import { NewAreaDialogComponent } from './new-area-dialog/new-area-dialog.component';
 import { UploadDialogComponent } from './upload-dialog/upload-dialog.component';
@@ -24,7 +23,6 @@ import { InfoAboutResultDialogComponent } from './info-about-result-dialog/info-
     AppComponent,
     MainPersonalityPageComponent,
     ChangeParamsPersonalityPageComponent,
-    NluPageComponent,
     NewAreaDialogComponent,
     UploadDialogComponent,
     CvCardComponent,

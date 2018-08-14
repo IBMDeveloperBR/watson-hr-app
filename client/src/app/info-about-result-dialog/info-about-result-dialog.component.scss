@@ -33,3 +33,33 @@ table {
     width: 100%;
     margin-bottom: 15px;
 }
+
+@media screen and (max-width: 800px) {
+    .flow-btn-area{
+        justify-content: center;
+        button{
+            font-size: 13px;
+            width: 5%;
+            margin: 0;
+        } 
+        button:first-child {
+            margin-right: 3px;
+        }
+    }
+
+    .btn-area button span {
+        display: none;
+    }
+
+    p {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    mat-step-header .mat-step-label {
+        display: none !important;
+    }
+    .mat-cell {
+        text-align: right;
+    }
+}

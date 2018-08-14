@@ -71,7 +71,7 @@
         margin-right: 30%;
         text-align: center;
         i{
-            vertical-align:middle
+            vertical-align:middle;
         }
     }
     mat-form-field{
@@ -127,5 +127,20 @@
     }
     .title{
         margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .custom-file-upload{
+        padding-right: 48px !important;
+        span{
+            display: none;
+        }
+    }
+
+    .description{
+        font-size: 15px;
+        padding: 20px !important;
+        height: 33vh;
     }
 }

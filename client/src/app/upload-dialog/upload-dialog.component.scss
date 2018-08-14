@@ -2,6 +2,11 @@ input[type="file"] {
     display: none;
 }
 
+.description{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .upload{
     width: 100%;
     display: flex;
@@ -52,5 +57,24 @@ input[type="file"] {
         font-weight: bold;
         padding-left: 5px;
         padding-right: 5px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .description{
+        h4{
+            font-size: 13px;
+        }
+    }
+
+    .btn-area {
+        button{
+            span{
+                display: none
+            }
+        }
+    }
+
+    .upload{
+        font-size: 13px;
     }
 }

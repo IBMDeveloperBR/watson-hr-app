@@ -103,3 +103,20 @@ footer{
 input[type="file"] {
     display: none;
 }
+
+@media screen and (max-width: 800px) {
+    mat-card h4 {
+        font-size: 13px;
+    }
+    mat-expansion-panel {
+        font-size: 13px !important;
+        mat-panel-description {
+            display: none;
+        }
+    }
+    
+    mat-card {
+        width: 80%;
+        margin-left: 12%;
+    }
+}
