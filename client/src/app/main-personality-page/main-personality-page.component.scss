@@ -132,7 +132,7 @@
 
 @media screen and (max-width: 800px) {
     .custom-file-upload{
-        padding-right: 48px !important;
+        padding-right: 24px !important;
         span{
             display: none;
         }
@@ -142,5 +142,11 @@
         font-size: 15px;
         padding: 20px !important;
         height: 33vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .custom-file-upload{
+        padding-right: 48px !important;
     }
 }

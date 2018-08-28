@@ -5,7 +5,7 @@
     </h4>
   </div>
   <div class="row">
-    <div class="col-lg-4 col-xl-4 col-md-4" *ngFor="let example of examples">
+    <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12" *ngFor="let example of examples" style="margin-bottom: 5px;">
       <app-cv-card [name]="example" (pdfClick)="getFileFromExamples($event)"></app-cv-card>
     </div>
   </div>

@@ -3,10 +3,8 @@
 }
 .reminder{
     position: relative;       
-    i {
-        position: absolute;
-        top: 1px;
-        font-size: 21px;
+    span{
+        font-weight: bolder;
     }
 }
 

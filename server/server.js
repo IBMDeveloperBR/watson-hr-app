@@ -13,18 +13,6 @@ const ENV = process.env.NODE_ENV;
 
 const app = express();
 
-if(ENV === 'production'){
-    app.enable('trust proxy');
-
-    app.use ((req, res, next) => {
-      if (req.secure || process.env.BLUEMIX_REGION === undefined) {
-        next();
-      } else {
-        res.redirect('https://' + req.headers.host + req.url);
-      }
-    });
-}
-
 app.use(compress({
     cache: (req, res) => {
         return true;
@@ -53,6 +41,19 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(fileUpload());
 // Point static path to dist
 app.use(express.static(path.join(__dirname, '../client/dist/client/')));
+
+//production https redirect
+if(ENV === 'production'){
+    app.enable('trust proxy');
+
+    app.use ((req, res, next) => {
+        if (req.secure || process.env.BLUEMIX_REGION === undefined) {
+            next();
+        } else {
+            res.redirect('https://' + req.headers.host + req.url);
+        }
+    });
+}
 
 //API Routes
 require('./Routes')(app, express);
