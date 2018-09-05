@@ -5,6 +5,17 @@
   * [Watson Personality Insights](https://www.ibm.com/watson/services/personality-insights/)
   * [Watson Language Translator](https://www.ibm.com/watson/services/language-translator/)
   
+## Tenha sua própria cópia: Deploy na IBM Cloud
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-code-br/Assistant-and-Discovery-Demo)
+
+**Lembre-se de criar sua IAM Key clicando no botão Create**
+
+Após clicar no botão acima:
+
+* Use o Eclipse Orion Web IDE e Edite o arquivo `.env` com suas credencias do Watson;
+* depois disso volte uma página, clique em Delivery Pipeline e logo após no botão Play dentro de BUILD STAGE.
+
 ## Rodando Localmente
 #### Backend:
   Para instalar o backend basta seguir os passos abaixo:
