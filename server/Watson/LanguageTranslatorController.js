@@ -1,4 +1,4 @@
-const LanguageTranslator  = require('watson-developer-cloud/language-translator/v2');
+const LanguageTranslator  = require('watson-developer-cloud/language-translator/v3');
 
 class LanguageTranslatorController{
     constructor(){
@@ -10,7 +10,8 @@ class LanguageTranslatorController{
             this.watsonTranslator = new LanguageTranslator({
                 username: process.env.WATSON_TRANSLATOR_USERNAME,
                 password: process.env.WATSON_TRANSLATOR_PASSWORD,
-                version_date: "2017-10-13"
+                url: "https://gateway.watsonplatform.net/language-translator/api",
+                version: '2018-05-01'
             });
             return Promise.resolve();
         } catch(err) {
